@@ -24,13 +24,21 @@ export type Props = {
   ];
 };
 
+interface Burger {
+  name: string;
+  image: string;
+  desc: string;
+  price: number;
+  id: string;
+}
+
 const page = async () => {
   const data = await getBurgers();
 
   return (
     <div>
       <h1>Наши Бургеры</h1>
-      {data.map((burger) => (
+      {data.map((burger: Burger) => (
         <Link
           className={styles.burgerCard}
           href={`/burgers/${burger.id}`}
