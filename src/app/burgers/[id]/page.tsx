@@ -1,16 +1,10 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+import { getBurger } from '../../services/getBurgers';
+import { getBurgerApi } from '../../services/getBurgers';
 
 import styles from '../Burgers.module.css';
-
-async function gerBurger(id: string) {
-  const response = await fetch(`http://localhost:5000/burgers/${id}`);
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch burger');
-  }
-  const data = await response.json();
-  return data;
-}
 
 type burgerProps = {
   params: {
@@ -18,8 +12,18 @@ type burgerProps = {
   };
 };
 
+export async function generateMetadata({
+  params: { id },
+}: burgerProps): Promise<Metadata> {
+  const post = await getBurgerApi(id);
+  return {
+    title: `${post.name}`,
+  };
+}
+
 const Burger = async ({ params: { id } }: burgerProps) => {
-  const burger = await gerBurger(id);
+  // const burger = await getBurger(id);
+  const burger = await getBurgerApi(id);
 
   return (
     <div className={styles.singleBurger}>

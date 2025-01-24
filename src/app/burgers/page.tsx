@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import { getBurgers } from '../services/getBurgers';
+import { getBurgersApi } from '../services/getBurgers';
 
 import styles from './Burgers.module.css';
 
@@ -32,8 +33,9 @@ interface Burger {
   id: string;
 }
 
-const page = async () => {
-  const data = await getBurgers();
+const page: FC = async () => {
+  // const data = await getBurgers();
+  const data = await getBurgersApi();
 
   return (
     <div>
