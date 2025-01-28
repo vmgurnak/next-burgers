@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Metadata } from 'next';
+// import { Metadata } from 'next';
 
 // import { getBurger } from '../../services/getBurgers';
 import { getBurgerApi } from '../../services/getBurgers';

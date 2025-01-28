@@ -12,8 +12,7 @@ interface Burger {
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } },
-  res: Response
+  { params }: { params: { id: string } }
 ) {
   const id = await params.id;
 
