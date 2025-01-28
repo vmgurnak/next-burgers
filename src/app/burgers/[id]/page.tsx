@@ -22,7 +22,10 @@ export async function generateMetadata({
 }
 
 const Burger = async ({ params: { id } }: burgerProps) => {
+  // // for json-server
   // const burger = await getBurger(id);
+
+  // for api
   const burger = await getBurgerApi(id);
 
   return (
@@ -34,8 +37,6 @@ const Burger = async ({ params: { id } }: burgerProps) => {
           alt={`${burger.name}`}
           width={400}
           height={300}
-          layout="responsive"
-          objectFit="cover"
         />
       </div>
       <div>

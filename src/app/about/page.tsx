@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
+import { FC } from 'react';
 
 export const metadata: Metadata = {
   title: 'Burgers | About',
   description: 'About Page',
 };
 
-const AboutPage = () => {
+const AboutPage: FC = () => {
   return (
     <div>
       <h1>О нас</h1>

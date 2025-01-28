@@ -2,15 +2,23 @@ import { NextResponse } from 'next/server';
 
 import burgers from '../../../../../db.json';
 
+interface Burger {
+  name: string;
+  image: string;
+  desc: string;
+  price: number;
+  id: string;
+}
+
 export async function GET(
   req: Request,
   { params }: { params: { id: string } }
 ) {
-  const id = params.id;
+  const id = await params.id;
 
   console.log(id);
 
-  const burger = burgers.burgers.find((burger: any) => burger.id === id);
+  const burger = burgers.burgers.find((burger: Burger) => burger.id === id);
 
   return NextResponse.json(burger);
 }

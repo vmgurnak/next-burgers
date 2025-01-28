@@ -34,7 +34,10 @@ interface Burger {
 }
 
 const page: FC = async () => {
+  // // for json-server
   // const data = await getBurgers();
+
+  // for api
   const data = await getBurgersApi();
 
   return (
@@ -48,14 +51,11 @@ const page: FC = async () => {
         >
           <div className={styles.imageContainer}>
             <Image
+              className={styles.image}
               src={`${burger.image}`}
               alt={`${burger.name}`}
-              // width="100%"
-              // height="100%"
               width={400}
               height={300}
-              layout="responsive"
-              objectFit="cover"
             />
           </div>
           <div>

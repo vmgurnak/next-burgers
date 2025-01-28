@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   description: 'App burgers',
 };
 
-export default function RootLayout({
-  children,
-}: {
+type LayotProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: LayotProps) {
   return (
     <html lang="en">
       <body>

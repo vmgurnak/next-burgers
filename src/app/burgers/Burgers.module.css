@@ -1,5 +1,6 @@
 .imageContainer {
   max-width: 150px;
+  height: 160px;
 }
 .burgerCard {
   color: #2e2e2e;
@@ -25,4 +26,5 @@
 .imageContainer img {
   width: 100%;
   height: 100%;
+  /* object-fit: cover; */
 }

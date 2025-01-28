@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import { getComments } from '../services/getComments';
+import { FC } from 'react';
 
 export const metadata: Metadata = {
   title: 'Burgers | Reviews',
   description: 'Reviews Page',
 };
 
-const ReviewsPage = async () => {
+const ReviewsPage: FC = async () => {
   const comments = await getComments();
 
   return (

@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './page.module.css';
+import { JSX } from 'react';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <h1 className={`${styles.title} font-effect-fire-animation`}>
