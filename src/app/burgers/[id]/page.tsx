@@ -8,9 +8,7 @@ import styles from '../Burgers.module.css';
 import { FC } from 'react';
 
 type burgerProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 };
 
 // export async function generateMetadata({
