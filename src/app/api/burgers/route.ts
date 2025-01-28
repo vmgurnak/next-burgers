@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import burgers from '../../../../db.json';
-import { NextApiRequest, NextApiResponse } from 'next';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
   return NextResponse.json(burgers);
 }

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import Link from 'next/link';
 
-import { getBurgers } from '../services/getBurgers';
+// import { getBurgers } from '../services/getBurgers';
 import { getBurgersApi } from '../services/getBurgers';
 
 import styles from './Burgers.module.css';

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-import { getBurger } from '../../services/getBurgers';
+// import { getBurger } from '../../services/getBurgers';
 import { getBurgerApi } from '../../services/getBurgers';
 
 import styles from '../Burgers.module.css';
