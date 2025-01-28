@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { getBurgerApi } from '../../services/getBurgers';
 
 import styles from '../Burgers.module.css';
+import { FC } from 'react';
 
 type burgerProps = {
   params: {
@@ -12,20 +13,23 @@ type burgerProps = {
   };
 };
 
-export async function generateMetadata({
-  params: { id },
-}: burgerProps): Promise<Metadata> {
-  const post = await getBurgerApi(id);
-  return {
-    title: `${post.name}`,
-  };
-}
+// export async function generateMetadata({
+//   params: { id },
+// }: burgerProps): Promise<Metadata> {
+//   const post = await getBurgerApi(id);
+//   return {
+//     title: `${post.name}`,
+//   };
+// }
 
-const Burger = async ({ params: { id } }: burgerProps) => {
+const Burger: FC<burgerProps> = async ({ params }) => {
   // // for json-server
   // const burger = await getBurger(id);
 
   // for api
+
+  const id = (await params).id;
+
   const burger = await getBurgerApi(id);
 
   return (
