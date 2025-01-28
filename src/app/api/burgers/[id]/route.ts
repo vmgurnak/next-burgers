@@ -10,13 +10,8 @@ interface Burger {
   id: string;
 }
 
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+export async function GET(req: Request, { params }: { params: { id: any } }) {
   const id = await params.id;
-
-  console.log(id);
 
   const burger = burgers.burgers.find((burger: Burger) => burger.id === id);
 
