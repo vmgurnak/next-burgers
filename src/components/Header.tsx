@@ -1,16 +1,19 @@
 import Link from 'next/link';
 import { SiBurgerking } from 'react-icons/si';
+import Navigation from './Navigation';
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Burgers', href: '/burgers' },
+];
 
 const Header = () => {
   return (
     <header>
       <SiBurgerking />
-      <nav>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/reviews">Reviews</Link>
-        <Link href="/burgers">Burgers</Link>
-      </nav>
+      <Navigation navLinks={navItems} />
     </header>
   );
 };

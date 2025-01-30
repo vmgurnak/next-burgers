@@ -11,6 +11,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Burgers | Home',
   description: 'App burgers',
+  keywords: 'burgers, best burgers',
 };
 
 type LayotProps = {
